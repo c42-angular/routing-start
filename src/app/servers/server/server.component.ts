@@ -11,7 +11,7 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 export class ServerComponent implements OnInit {
   server: {id: number, name: string, status: string};
 
-  constructor(private serversService: ServersService, 
+  constructor(private serversService: ServersService,
     private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -25,6 +25,6 @@ export class ServerComponent implements OnInit {
   }
 
   onEdit() {
-    this.router.navigate(['edit'], {relativeTo: this.activeRoute});
+    this.router.navigate(['edit'], {relativeTo: this.activeRoute, queryParamsHandling: 'preserve'});
   }
 }
